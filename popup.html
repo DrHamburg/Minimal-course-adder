@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Minimal Course Adder</title>
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">🎓</div>
+        <div class="brand__txt">
+          <h1>Course Adder</h1>
+          <p>preprereg.eniamza.com</p>
+        </div>
+      </div>
+
+      <div class="actions actions--top">
+        <button id="run" class="btn btn--primary" title="Run on this page">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M8 5v14l11-7z"/></svg>
+          Run
+        </button>
+        <button id="save" class="btn btn--ghost" title="Save list">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M17 3H7a2 2 0 0 0-2 2v14l7-3 7 3V5a2 2 0 0 0-2-2z"/></svg>
+          Save
+        </button>
+      </div>
+    </header>
+
+    <main class="card">
+      <div class="field">
+        <label for="lines">Your courses (one per line)</label>
+        <div class="hint">Format is flexible: <code>CSE221: Sec-09B</code> · <code>cse221 sec-09</code> · <code>CSE 221 9B</code></div>
+        <textarea id="lines" rows="9" placeholder="CSE221: Sec-09B
+cse221 sec-09
+CSE 221: 9B
+EEE205: 01"></textarea>
+        <div class="field__meta">
+          <div class="chips">
+            <button class="chip" data-example="CSE110: sec-02">CSE110: sec-02</button>
+            <button class="chip" data-example="CSE220: sec-14">CSE220: sec-14</button>
+            <button class="chip" data-example="EEE205: 01">EEE205: 01</button>
+          </div>
+          <span id="count" class="muted">0 lines</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <section class="grid">
+        <div class="tile">
+          <h3>Tips</h3>
+          <ul class="list">
+            <li>Be on the page with the two lists (Available ⇄ Selected).</li>
+            <li>Use <span class="kbd">Run</span> to automate search → select → <span class="kbd">&gt;</span>.</li>
+            <li>Case/spacing don’t matter; sections like <code>09</code> or <code>09B</code> are OK.</li>
+          </ul>
+        </div>
+        <div class="tile">
+          <h3>Shortcuts</h3>
+          <ul class="list">
+            <li><span class="kbd">Ctrl</span> + <span class="kbd">Enter</span> → Run</li>
+            <li><span class="kbd">Ctrl</span> + <span class="kbd">S</span> → Save</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app__footer">
+      <span id="status" class="status" role="status" aria-live="polite"></span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

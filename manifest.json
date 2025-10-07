@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Minimal Course Adder",
+  "version": "1.1.0",
+  "description": "Type-to-search and auto-add sections (e.g., CSE221: Sec-09B) on preprereg.eniamza.com",
+  "permissions": ["storage", "activeTab", "tabs", "scripting"],
+  "host_permissions": [
+    "https://preprereg.eniamza.com/*",
+    "https://preprereg.vercel.app/*"
+  ],
+  "action": { "default_popup": "popup.html", "default_title": "Minimal Course Adder" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://preprereg.eniamza.com/*",
+        "https://preprereg.vercel.app/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
